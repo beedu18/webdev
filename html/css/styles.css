@@ -1,0 +1,24 @@
+hr {
+    border-style: none; /*override default browser css*/
+    border-top-style: dotted;
+    border-color: grey;
+    border-width: 5px;
+    width: 15%; /*for dynamic screen sizes*/
+}
+
+h1, h3 {
+    color: #ff414d;
+}
+
+body {
+    background-color: powderblue;
+}
+
+img {
+    border-radius: 30%;
+    border: 2px dotted #726a95;
+}
+
+img:hover {
+    background-color: white;
+}
