@@ -60,6 +60,7 @@ After months of procrastination during the pandemic, I decided to give this a go
 	- Events and EventListeners
 	- Higher Order Functions
 	- Callbacks
+	- jQuery
 
 	Final Results after module completion
 
