@@ -52,3 +52,22 @@ After months of procrastination during the pandemic, I decided to give this a go
 	<br>
 	#### Mobile Version	
 	![catter mobile](./results/catter_phone.gif "Mobile Version")
+
+4. JavaScript ES6
+	- Programming Paradigms (Conditionals, Loops etc)
+	- DOM Manipulation
+	- JavaScript Objects
+	- Events and EventListeners
+	- Higher Order Functions
+	- Callbacks
+
+	Final Results after module completion
+
+	#### Dice Game
+	![dice game](./results/dice.gif "Simple Dice Game")
+	<br>
+
+	#### Drum Kit
+	<video width="400" controls>
+  		<source src="./results/drumkit.mp4" type="video/mp4">
+	</video>
