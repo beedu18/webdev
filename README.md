@@ -46,10 +46,9 @@ After months of procrastination during the pandemic, I decided to give this a go
 	-  Media Query Breakpoints
 	-  Refactoring (don't be a lazy and just do it!)
 	
-	I made a responsive landing page for an app after completing the CSS module
+	I made a responsive landing page for an app after completing the Bootstrap module
 	#### Web Version
 	![catter web](./results/catter_web.gif "Web Version")
-	
+	<br>
 	#### Mobile Version	
 	![catter mobile](./results/catter_phone.gif "Mobile Version")
-	
