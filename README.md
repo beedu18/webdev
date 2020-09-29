@@ -72,3 +72,12 @@ After months of procrastination during the pandemic, I decided to give this a go
 	<video width="400" controls>
   		<source src="./results/drumkit.mp4" type="video/mp4">
 	</video>
+	<br>
+	
+	#### Simon Game
+	The Game Generates a colour sequence which the user has to remember and press the appropriate buttons.
+	On succesfully completing the pattern, the level is upgraded and failure to do so resets the game.
+	<br>
+	<video width="400" controls>
+  		<source src="./results/simon.mp4" type="video/mp4">
+	</video>
