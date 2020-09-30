@@ -1,0 +1,15 @@
+{
+  "name": "test-pkg",
+  "version": "1.0.0",
+  "description": "this is a test package ",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hp-au006tx",
+  "license": "ISC",
+  "dependencies": {
+    "superheroes": "^3.0.0",
+    "supervillains": "^3.0.0"
+  }
+}

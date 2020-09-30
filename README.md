@@ -76,8 +76,20 @@ After months of procrastination during the pandemic, I decided to give this a go
 	
 	#### Simon Game
 	The Game Generates a colour sequence which the user has to remember and press the appropriate buttons.
-	On succesfully completing the pattern, the level is upgraded and failure to do so resets the game.
+	On succesfully completing the pattern, the level is upgraded and failure to do so, resets the game.
 	<br>
 	<video width="400" controls>
   		<source src="./results/simon.mp4" type="video/mp4">
 	</video>
+
+5. The Backend
+	- [Node.js](https://nodejs.org/en/ "NodeJS")
+	- Node REPL
+	- [Native Node Modules](https://nodejs.org/api/modules.html "Modules")
+	- [Node Package Manager](https://www.npmjs.com/ "NPM")
+	- Packages Explored
+		- [Express](https://www.npmjs.com/package/express "express")
+		- [Body Parser](https://www.npmjs.com/package/body-parser "body-parser")
+		- [Nodemon](https://www.npmjs.com/package/nodemon "nodemon")
+	- Application Routes
+	- Handling Requests and Responses
