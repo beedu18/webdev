@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+html {
+    font-family: 'Nunito', sans-serif;
+    background-color: #ffab91;
+    background-image: -webkit-linear-gradient(-45deg, #ff7043 50%, #ffab91 50%);
+    background-image: linear-gradient(-45deg, #ff7043 50%, #ffab91 50%);
+    height: 100vh;
+    color: #ff3d00;
+}
+
+.box {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #ffccbc;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.3);
+}
+
+.item {
+    font-size: 1.1rem;
+    background-color: #ffccbc;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #fbe9e7;
+    border-radius: 2px;
+    margin: 5px;
+}
+
+.item:last-child {
+    border-bottom: 0;   
+}
+
+form {
+    padding: 10% 5%;
+    text-align: center;
+    background-color: #ffccbc;
+    margin: 10px;
+}
+
+#heading {
+    color: #ffccbc;
+    letter-spacing: 1px;
+    padding: .2px 30px;
+    text-align: center;
+    background-color: #ff5722;
+}
+
+input[type="checkbox"] {
+    zoom: 1.3;
+    margin: auto 10%;
+    outline: none;
+}
+
+input:checked+p {
+    text-decoration: line-through;
+}
+
+input[type="text"] {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-right: 5%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ff7043; 
+    background-color: #ffccbc;
+    color: #ff3d00;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-bottom: 2px solid #ff5722;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 5px;
+    border-radius: 100%;
+    border: none;
+    background-color: #ff7043;
+    font-size: 2rem;
+    color: #fbe9e7;
+}
+
+button:hover {
+    background-color: #ff5722;
+}
+
+button:focus {
+    outline: none;
+}

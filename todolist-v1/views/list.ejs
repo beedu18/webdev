@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List v1</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="icon" type="x-icon/ico" href="./favicon.ico">
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1><%= theDay %></h1>
+    </div>
+    <div class="box">
+        <% for(let i=0; i<newItems.length; i++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newItems[i] %></p>
+            </div>
+        <% } %>
+    </div>
+    <div class="box">
+        <form method="POST" action="/">
+            <input type="text" name="newItem" placeholder="Add New Item" autocomplete="off">
+            <button type="submit">+</button>
+        </form>
+    </div>
+</body>
+</html>

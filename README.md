@@ -93,3 +93,17 @@ After months of procrastination during the pandemic, I decided to give this a go
 		- [Nodemon](https://www.npmjs.com/package/nodemon "nodemon")
 	- Application Routes
 	- Handling Requests and Responses
+
+6. APIs
+	- Endpoints
+	- Authentication
+	- Parameters
+	- Calls Using
+		- Https Node Module
+		- Fetch API
+	
+	Results
+
+	#### Giphy API for Sticker Search
+	![giphy api](./results/giphy.gif "Sticker")
+

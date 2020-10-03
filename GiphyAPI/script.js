@@ -26,9 +26,9 @@ $(".search-btn").on("click", ()=>{
     box.val("");
 })
 
+//creates the image containers and add <img> tags inside them
 function addContainers(length) {
     for(let i=0; i<length; i++) {
-        $(".row").append("<div class='col-lg-3 col-md-4 col-sm-6 "+i+"'></div>");
-        $("."+i).append("<img class='img-"+i+"'>");
+        $(".row").append("<div class='col-lg-3 col-md-4 col-sm-6 "+i+"'><img class='img-"+i+"'></div>");
     }
 }
