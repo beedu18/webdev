@@ -63,7 +63,7 @@ input[type="text"] {
     margin-right: 5%;
     padding: 10px 0;
     border: none;
-    border-bottom: 2px solid #ff7043; 
+    border-bottom: 2px solid #ff8a65; 
     background-color: #ffccbc;
     color: #ff3d00;
 }
@@ -91,4 +91,10 @@ button:hover {
 
 button:focus {
     outline: none;
+}
+
+footer {
+    margin-top: 5%;
+    color: rgba(0,0,0,.6);
+    text-align: center;
 }
