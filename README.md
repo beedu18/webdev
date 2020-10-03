@@ -107,3 +107,12 @@ After months of procrastination during the pandemic, I decided to give this a go
 	#### Giphy API for Sticker Search
 	![giphy api](./results/giphy.gif "Sticker")
 
+7. Templating
+	- Why Templating?
+	- [Embedded JavaScript (EJS)](https://ejs.co/ "EJS") templates
+	- Types of EJS tags
+
+	Results
+
+	#### Todo List v1
+	![todo list](./results/todo1.gif "Todo List v1")
