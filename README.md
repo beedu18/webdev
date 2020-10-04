@@ -112,7 +112,8 @@ After months of procrastination during the pandemic, I decided to give this a go
 	- [Embedded JavaScript (EJS)](https://ejs.co/ "EJS") templates
 	- Types of EJS tags
 	- Layouts
-	- Adding custom modules to project*
+	- EJS Partials
+	- Add custom modules to project*
 
 	Results
 
