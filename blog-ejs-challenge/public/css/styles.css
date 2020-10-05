@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
 body {
     background-color: #37474f;
     color: #cfd8dc;
+    font-family: 'Rubik', sans-serif;
 }
 
 h1 {
@@ -70,7 +73,7 @@ a:hover{
 
 .footer p {
 	margin: 10px;
-	font-size: 12px;
+	font-size: 1.1rem;
     color: #fff;
     letter-spacing: 1px;
 }

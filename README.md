@@ -92,6 +92,7 @@ After months of procrastination during the pandemic, I decided to give this a go
 		- [Body Parser](https://www.npmjs.com/package/body-parser "body-parser")
 		- [Nodemon](https://www.npmjs.com/package/nodemon "nodemon")
 	- Application Routes
+	- Route Parameters
 	- Handling Requests and Responses
 
 6. APIs
@@ -119,3 +120,6 @@ After months of procrastination during the pandemic, I decided to give this a go
 
 	#### Todo List v1
 	![todo list](./results/todo1.gif "Todo List v1")
+	
+	#### Blog Website v1
+	![todo list](./results/blogv1.gif "Todo List v1")
