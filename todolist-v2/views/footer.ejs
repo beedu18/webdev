@@ -1,0 +1,14 @@
+    <footer>
+        This is a footer
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(".cross").click((evt) => {
+            $(evt.target)   //clicked element
+                .parent()   //operations div
+                .prev()     //paragraph element
+                .toggleClass("strikeoff");
+        });
+    </script>
+</body>
+</html>
