@@ -123,3 +123,16 @@ After months of procrastination during the pandemic, I decided to give this a go
 	
 	#### Blog Website v1
 	![todo list](./results/blogv1.gif "Todo List v1")
+
+8. Databases
+	- SQL and NoSQL Databases
+	- Exploring [MongoDB](https://docs.mongodb.com/ "mongodb")
+		- Collections
+		- Documents
+	- Native Driver vs [Mongoose](https://mongoosejs.com/docs/guide.html "mongoose")
+	- [CRUD](https://mongoosejs.com/docs/api.html "mongoose crud") operations using Mongoose
+		- Document.prototype.save(), Model.insertMany()
+		- Model.find()
+		- Model.updateOne(), Model.updateMany() 
+		- Model.deleteOne(), Model.deleteMany()
+	- Document Validation in Mongoose
