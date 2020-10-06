@@ -56,7 +56,7 @@ p {
     color: #303f9f;
 }
 
-form {
+form.new {
     padding: 10% 5%;
     text-align: center;
     background-color: #9fa8da;
