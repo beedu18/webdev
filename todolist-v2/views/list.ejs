@@ -8,15 +8,14 @@
                 <div class="item">
                     <p><%= item.name %></p>
                     <div class="operations">
-                        <!-- hidden input elemen to post data -->
-                        <input type="text" style="display: none" 
-                            name="id" 
-                            value="<%= item._id %>">
-
+                        <!-- hidden input elements to post data -->
+                        <input type="hidden" name="id" value="<%= item._id %>">
+                        <input type="hidden" name="listName" value="<%= header %>">
+                        
                         <!-- Icons -->
-                        <i class="crud-icon update fas fa-pen"></i>
+                        <!-- <i class="crud-icon update fas fa-pen"></i> -->
                         <i class="crud-icon delete fas fa-trash-alt"></i>
-                        <i class="crud-icon cross fas fa-times"></i>
+                        <!-- <i class="crud-icon cross fas fa-times"></i> -->
                     </div>
                 </div>
             </form>
@@ -25,7 +24,7 @@
     <div class="box">
         <form class="new" method="POST" action="/">
             <input type="text" name="newItem" placeholder="Add New Item" autocomplete="off">
-            <button type="submit" name="listType" value= <%= header %> >+</button>
+            <button type="submit" name="listName" value= <%= header %> >+</button>
         </form>
     </div>
 <%- include("footer") -%>

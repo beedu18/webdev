@@ -2,20 +2,26 @@ const express = require("express");
 const bodyParser = require("body-parser");
 // const date = require(__dirname+"/date.js");
 const mongoose = require("mongoose");
+const _ = require("lodash");
 
 //initialize express
 const app = express();
 
 //use the modules
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 //connect to database
 mongoose.connect("mongodb://localhost:27017/todolistDB", 
-    { useNewUrlParser: true, useUnifiedTopology: true });
+    {   
+        useNewUrlParser: true, 
+        useUnifiedTopology: true,
+        useFindAndModify: false
+    }
+);
 
-//create schema
+//create item schema
 const itemSchema = {
     name: {
         type: String,
@@ -23,12 +29,19 @@ const itemSchema = {
     }
 };
 
+//create list schema for custom lists
+const listSchema = {
+    name: String,
+    items: [itemSchema]
+};
+
 //model the database
 const Item = mongoose.model("Item", itemSchema);
+const List = mongoose.model("List", listSchema);
 
 //make dummy documents
 const item1 = new Item({
-    name: "You can Edit an entry"
+    name: "You can Edit an entry (hopefully)"
 });
 
 const item2 = new Item({
@@ -43,70 +56,107 @@ const item3 = new Item({
 app.get("/", (req, res) => {
     // const today = date.getDate();
     Item.find({}, (err, items) => {
-        if(err)
+        if (err)
             console.log(err);
         else {
             // console.log(items);
-            if(items.length===0) {
+            if (items.length === 0) {
                 //add dummy items to the collection
                 Item.insertMany([item1, item2, item3], (err) => {
-                    if(err)
+                    if (err)
                         console.log(err);
                     else
                         console.log("dummy entry successful");
                 });
 
                 //redirect to home route again to show
-                res.redirect("/"); 
-            }
-            else {
+                res.redirect("/");
+            } else {
                 // searches for list.ejs template in views/ directory
-                res.render("list", {header: "Today", newItems: items}); 
+                res.render("list", { header: "Today", newItems: items });
             }
-        }    
+        }
     });
     // res.send("hello"); 
 });
 
-app.post("/", (req, res)=> {
+app.post("/", (req, res) => {
     let item = req.body.newItem;
-    if(item!="") {
-        if(req.body.listType==="Work") {
-            workItems.push(item);
-            res.redirect("/work");
-        }
-        else {
-            const newItemDocument = new Item({
-                name: item
-            });
+    let listName = req.body.listName;
+    // console.log(`item: ${item}  listName: ${listName}`);
+    if (item != "") {
+        const newItemDocument = new Item({
+            name: item
+        });
+        if (listName === "Today") {
             newItemDocument.save();
-            // items.push(item);
             res.redirect("/");
-        }   
+        } else {
+            List.findOneAndUpdate({name: listName}, 
+                {$push: {items: newItemDocument}},
+                (err, success) => {
+                    if(!err)
+                        res.redirect("/"+listName);
+                }
+            ); 
+        }
     }
-    // console.log(item);
+    else {  //empty item
+        (listName === "Today")
+        ? res.redirect("/")
+        : res.redirect("/"+listName);
+    }
 });
 
+//set up delete route
 app.post("/delete", (req, res) => {
-    // console.log(req.body)
+    // console.log(req.body);
     let id = req.body.id;
-    Item.findByIdAndRemove(id, err => {
-        if(err)
+    let listName = req.body.listName;
+    if(listName === "Today") {
+        Item.findByIdAndDelete(id, err => {
+            if(!err)
+                res.redirect("/");
+        });        
+    }
+    else {
+        List.findOneAndUpdate({name: listName},
+            {$pull: {items: {_id: id}}},
+            (err, success) => {
+                if(!err)
+                    res.redirect("/"+listName);
+            }
+        );
+    }
+});
+
+//Custom Routes
+app.get("/:customRoute", (req, res) => {
+    // console.log(req.params.customRoute);
+    const customListName = _.capitalize(req.params.customRoute);
+
+    const list = new List({
+        name: customListName,
+        items: [item1, item2, item3]
+    });
+
+    List.findOne({ name: customListName }, (err, found) => {
+        if (err)
             console.log(err);
         else {
-            // console.log("Deleted Successfully");
-            res.redirect("/");
+            if (!found) {
+                list.save();
+                res.redirect("/" + customListName);
+            } else
+                res.render("list", { header: found.name, newItems: found.items });
         }
     });
+    // res.redirect("/");
 });
 
-app.get("/work", (req, res) => {
-    res.render("list", {header: "Work List", newItems: workItems});
-});
-
-app.get("/dummy", (req, res) => {
-    res.render("dummyLayout");
-});
+// app.get("/dummy", (req, res) => {
+//     res.render("dummyLayout");
+// });
 
 app.listen(3000, () => {
     console.log("Server Started");
