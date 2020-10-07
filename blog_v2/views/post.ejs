@@ -1,0 +1,16 @@
+<%- include('./partials/header') -%>
+
+<form method="post" action="">
+    <input type="hidden" name="id" value="<%= post._id %>">
+    <div class="post-page">
+        <h1><%= post.title %></h1>
+        <div class="opeartions">
+            <i class="update fas fa-pen"></i>
+            <i class="delete fas fa-trash-alt"></i>
+        </div>
+    </div>
+    <p><%= post.body %></p>
+    
+</form>
+
+<%- include('./partials/footer') -%>

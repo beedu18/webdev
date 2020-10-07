@@ -1,0 +1,25 @@
+<%- include('./partials/header') -%>
+
+<h1>Home</h1>
+<p><%= homeStartingContent %></p>
+<% posts.forEach((post) => { %>
+    <% let id = post._id; %>
+    <% let title = post.title; %>
+    <% let body = post.body; %>    
+    <% if(body.length>150) { %>
+        <h1><%= title %></h1>  
+        <form action="/posts/<%= id %>" method="post">
+            <p><%= body.substr(0,150)+"... " %>
+                <a class="link">Read More</a>
+            </p>
+        </form>
+    <% } else { %>
+        <form action="/posts/<%= id %>" method="post">
+            <h1>
+                <a class="link"><%= title %></a>
+            </h1>
+        </form>
+        <p><%= body %></p>
+    <% } %>
+<% }); %>
+<%- include('./partials/footer') -%>
