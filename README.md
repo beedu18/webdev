@@ -145,3 +145,15 @@ After months of procrastination during the pandemic, I decided to give this a go
 	
 	#### CRUD operation support added to blog site
 	![blog](./results/blogv2.gif "Blog v2")
+
+9. REpresentational State Transfer
+	- HTTP Requests
+		- GET
+		- POST
+		- PUT
+		- PATCH
+		- DELETE
+	- Built a simple RESTful API from scratch
+	- Tools used while testing
+		- [Robo3T](https://robomongo.org/download "Robo3T") (GUI application for visualizing Mongo Databases)
+		- [Postman](https://www.postman.com/ "Postman") (API development platform)
