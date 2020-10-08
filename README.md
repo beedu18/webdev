@@ -122,7 +122,7 @@ After months of procrastination during the pandemic, I decided to give this a go
 	![todo list](./results/todo1.gif "Todo List v1")
 	
 	#### Blog Website v1
-	![todo list](./results/blogv1.gif "Todo List v1")
+	![blog](./results/blogv1.gif "Blog")
 
 8. Databases
 	- SQL and NoSQL Databases
@@ -135,4 +135,13 @@ After months of procrastination during the pandemic, I decided to give this a go
 		- Model.find()
 		- Model.updateOne(), Model.updateMany() 
 		- Model.deleteOne(), Model.deleteMany()
+		- $push and $pull using Model.findOneAndUpdate()
 	- Document Validation in Mongoose
+
+	Results
+
+	#### Todo List Made persistent using database
+	![todo list](./results/todo2.gif "Todo List v2")
+	
+	#### CRUD operation support added to blog site
+	![blog](./results/blogv2.gif "Blog v2")

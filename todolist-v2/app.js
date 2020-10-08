@@ -59,22 +59,8 @@ app.get("/", (req, res) => {
         if (err)
             console.log(err);
         else {
-            // console.log(items);
-            if (items.length === 0) {
-                //add dummy items to the collection
-                Item.insertMany([item1, item2, item3], (err) => {
-                    if (err)
-                        console.log(err);
-                    else
-                        console.log("dummy entry successful");
-                });
-
-                //redirect to home route again to show
-                res.redirect("/");
-            } else {
-                // searches for list.ejs template in views/ directory
-                res.render("list", { header: "Today", newItems: items });
-            }
+            // searches for list.ejs template in views/ directory
+            res.render("list", { header: "Today", newItems: items });
         }
     });
     // res.send("hello"); 
@@ -137,7 +123,7 @@ app.get("/:customRoute", (req, res) => {
 
     const list = new List({
         name: customListName,
-        items: [item1, item2, item3]
+        items: []
     });
 
     List.findOne({ name: customListName }, (err, found) => {
