@@ -3,7 +3,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const md5 = require("md5");
+const bcrypt = require("bcrypt");
+
+const saltRounds = 10;
+
+// const md5 = require("md5");
 // const encrypt = require("mongoose-encryption");
 
 const app = express();
@@ -32,15 +36,21 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-    const user = new User({
-        email: req.body.username,
-        password: md5(req.body.password)
-    });
-
-    user.save(err => {
+    bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
         if(!err) {
-            console.log("User Added");
-            res.render("login");
+            const user = new User({
+                email: req.body.username,
+                password: hash
+            });
+
+            user.save(error => {
+                if(!error) {
+                    console.log("User Added");
+                    res.render("login");
+                }
+                else
+                    res.send(error);
+            });
         }
         else
             res.send(err);
@@ -53,22 +63,25 @@ app.get("/login", (req, res) => {
 
 app.post("/login", (req, res) => {
     const email = req.body.username;
-    const password = md5(req.body.password);
+    const password = req.body.password;
     // console.log(`email: ${email} password: ${password}`);
+    
     User.findOne({email: email}, (err, found) => {
         if(!err) {
             if(found) {
-                if(found.password === password)
-                    res.render("secrets");
-                else
-                    res.send("Incorrect Password");
+                bcrypt.compare(password, found.password, (error, result) => {
+                    if(result===true)
+                        res.render("secrets");
+                    else
+                        res.send("Incorrect Password");    
+                }); 
             }
             else
                 res.send("No User Found");
         }
         else
             res.send(err);
-    })
+    });
 });
 
 app.listen(3000, () => {
