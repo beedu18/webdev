@@ -179,3 +179,28 @@ After months of procrastination during the pandemic, I decided to give this a go
 	Simple page where users can register or login and can view or add new secrets
 
 	![](./results/secrets.gif)
+
+Till Directory #6 everything works on the client side.
+Proceeding onwards, you'll need npm to install the dependencies and can run the server with node.
+
+In the respective directory run the command 
+
+`npm install` 
+
+or 
+
+`npm i`
+
+to install the dependencies. And then you can start the server with
+
+`node app.js`
+
+Most should be accessible with 
+
+`http://localhost:3000/` 
+
+in any modern browser, but do take a look at the server file to verify the port number (it should also be logged in the prompt, but I might've gotten lazy while writing some files)
+
+And for the demos that need a database, you should have `mongod` running on the default port
+
+`mongodb://localhost:27017/`
