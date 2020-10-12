@@ -5,11 +5,6 @@ After months of procrastination during the pandemic, I decided to give this a go
 #### Course: [The Complete 2020 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/ )
 #### Instructor: [Dr. Angela Yu](https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/)
 
-#### The following websites were heavily used during the course 
-- [MDN Docs](https://developer.mozilla.org/en-US/)
-- [Codeply](https://www.codeply.com/p)
-- [Bootstrap documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
-
 ### Course Contents
 
 1. HTML	
@@ -30,7 +25,7 @@ After months of procrastination during the pandemic, I decided to give this a go
 	-  Box Model
 	-  Positioning
 	
-	After completing this module I ended up styling a profile page
+	Ended up styling a profile page after module completion
 	#### CSS Result
 	![CSS](./results/css_site.gif "Basic CSS Site")
 
@@ -43,10 +38,10 @@ After months of procrastination during the pandemic, I decided to give this a go
 	-  Carousel
 	-  Cards
 	-  Stacking order and z-index
-	-  Media Query Breakpoints
+	-  Media Queries
 	-  Refactoring (don't be a lazy and just do it!)
 	
-	I made a responsive landing page for an app after completing the Bootstrap module
+	Made a responsive landing page for an app after completing the Bootstrap module
 	#### Web Version
 	![catter web](./results/catter_web.gif "Web Version")
 	<br>
@@ -157,3 +152,30 @@ After months of procrastination during the pandemic, I decided to give this a go
 	- Tools used while testing
 		- [Robo3T](https://robomongo.org/download "Robo3T") (GUI application for visualizing Mongo Databases)
 		- [Postman](https://www.postman.com/ "Postman") (API development platform)
+
+10. Authentication and Security
+	- Level 1 Authentication - Email and Password
+		- Using Simple Database Schema
+		![](./results/pass_simple.png)
+	- Level 2 Authentication - Database Encryption
+		- Using mongoose-encrypt
+		![](./results/pass_enc.png)
+	
+	- Level 3 Authentication - Password Hashing
+		- Using md5
+		![](./results/pass_hash.png)
+
+	- Level 4 Authentication - Salting and Password Hashing
+		- Using bcrypt
+		![](./results/pass_salted.png)
+
+	- Level 5 Authentication - Sessions and Cookies
+		- Using PassportJS (local)
+		![](./results/pass_l5.png)
+		
+	Results
+
+	#### Post Secrets 
+	Simple page where users can register or login and can view or add new secrets
+
+	![](./results/secrets.gif)
