@@ -30,12 +30,14 @@ app.use(passport.session());
 mongoose.connect("mongodb://localhost:27017/userDB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 const userSchema = new mongoose.Schema({
     email: String,
-    password: String
+    password: String,
+    secret: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -49,11 +51,17 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get("/", (req, res) => {
-    res.render("home");
+    if(req.isAuthenticated())
+        res.redirect("/secrets");
+    else
+        res.render("home");
 });
 
 app.get("/register", (req, res) => {
-    res.render("register");
+    if(req.isAuthenticated())
+        res.redirect("/secrets");
+    else
+        res.render("register");
 });
 
 app.post("/register", (req, res) => {
@@ -71,7 +79,11 @@ app.post("/register", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-    res.render("login");
+    if(req.isAuthenticated())
+        res.redirect("/secrets");
+    else
+        res.render("login");
+    
 });
 
 app.post("/login", (req, res) => {
@@ -95,7 +107,12 @@ app.post("/login", (req, res) => {
 
 app.get("/secrets", (req, res) => {
     if(req.isAuthenticated()) {
-        res.render("secrets");
+        User.find({"secret": {$ne: null}}, (err, found) => {
+            if(!err) 
+                res.render("secrets", {users: found});
+            else
+                res.send(err);
+        });
     }
     else
         res.redirect("/login");
@@ -104,6 +121,26 @@ app.get("/secrets", (req, res) => {
 app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
+});
+
+app.get("/submit", (req, res) => {
+    if(req.isAuthenticated())
+        res.render("submit");
+    else
+        res.redirect("/login");
+});
+
+app.post("/submit", (req, res) => {
+    const secret = req.body.secret;
+    User.findOneAndUpdate({_id: req.user._id}, {
+        $set: {'secret': secret}},
+        (err, result) => {
+            if(!err)
+                res.redirect("/secrets");
+            else
+                res.send(err);
+        }
+    );
 });
 
 app.listen(3000, () => {
