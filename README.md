@@ -164,23 +164,23 @@ And for the demos that need a database, you should have `mongod` running on the 
 10. Authentication and Security
 	- Level 1 Authentication - Email and Password
 		- Using Simple Database Schema
-		![](./results/pass_simple.png)
+		- ![](./results/pass_simple.png)
 	
 	- Level 2 Authentication - Database Encryption
 		- Using mongoose-encrypt
-		![](./results/pass_enc.png)
+		- ![](./results/pass_enc.png)
 	
 	- Level 3 Authentication - Password Hashing
 		- Using md5
-		![](./results/pass_hash.png)
+		- ![](./results/pass_hash.png)
 
 	- Level 4 Authentication - Salting and Password Hashing
 		- Using bcrypt
-		![](./results/pass_salted.png)
+		- ![](./results/pass_salted.png)
 
 	- Level 5 Authentication - Sessions and Cookies
 		- Using PassportJS (local)
-		![](./results/pass_l5.png)
+		- ![](./results/pass_l5.png)
 		
 	Results
 
