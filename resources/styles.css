@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&family=Source+Sans+Pro:wght@900&display=swap");
+
+html {
+    background-image: linear-gradient(65deg, #1a237e 50%, #283593 50%);
+    height: 100vh;
+}
+
+ul {
+    list-style-type: none; 
+}
+
+li {
+    margin: 20px auto;
+}
+
+a {
+    transition: all .5s ease;
+    color: #5c6bc0;
+    text-decoration: none;
+    padding: 20px auto;
+}
+
+a:hover {
+    transition: all .5s ease;
+    color: #f48fb1;
+    position: relative;
+    bottom: 10px;
+    text-shadow: 0px 0px 15px;
+}
+
+.heading {
+    color: #8c9eff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+    transform: rotate(-3deg);
+    margin-bottom: 2%;
+    text-shadow: 1px 1px 0 #e8eaf6,
+                2px 2px 0 #8c9eff,
+                3px 3px 0 #8c9eff,
+                4px 4px 0 #8c9eff,
+                5px 5px 0 #8c9eff,
+                6px 6px 5px #8c9eff;
+    transition: all .2s ease;
+}
+
+.heading:hover {
+    cursor: default;
+    color: #f06292;
+    text-shadow: 1px 1px 0 #fce4ec,
+                2px 2px 0 #f8bbd0,
+                3px 3px 0 #f8bbd0,
+                4px 4px 0 #f8bbd0,
+                5px 5px 0 #f8bbd0,
+                6px 6px 15px #fff;
+
+}
+
+.link-container {
+    padding: 10px;
+    font-family: 'Grandstander', cursive;
+    text-align: center;
+    font-size: 2.5rem;
+}
