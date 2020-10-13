@@ -5,6 +5,19 @@ After months of procrastination during the pandemic, I decided to give this a go
 #### Course: [The Complete 2020 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/ )
 #### Instructor: [Dr. Angela Yu](https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/)
 
+Some of the stuff I worked on should be accessible [here](https://beedu18.github.io/webdev/ "github pages")
+
+Till Directory #6 everything works on the client side.
+Proceeding onwards, you'll need `npm` to install the dependencies and can run the server with `node`.
+
+In the respective directory run the command  `npm install` or `npm i` to install the dependencies. And then you can start the server with `node app.js` 
+
+Most should be accessible with `http://localhost:3000/`, but do take a look at the server file to verify the port number (it should also be logged in the prompt, but I might've gotten lazy while writing some files)
+
+And for the demos that need a database, you should have `mongod` running on the default port
+
+`mongodb://localhost:27017/`
+
 ### Course Contents
 
 1. HTML	
@@ -64,18 +77,13 @@ After months of procrastination during the pandemic, I decided to give this a go
 	<br>
 
 	#### Drum Kit
-	<video width="400" controls>
-  		<source src="./results/drumkit.mp4" type="video/mp4">
-	</video>
-	<br>
+	![drum kit](./results/drum.gif "JavaScript Events")
 	
 	#### Simon Game
 	The Game Generates a colour sequence which the user has to remember and press the appropriate buttons.
 	On succesfully completing the pattern, the level is upgraded and failure to do so, resets the game.
 	<br>
-	<video width="400" controls>
-  		<source src="./results/simon.mp4" type="video/mp4">
-	</video>
+	![simon game](./results/simon.gif "JavaScript Events")
 
 5. The Backend
 	- [Node.js](https://nodejs.org/en/ "NodeJS")
@@ -157,6 +165,7 @@ After months of procrastination during the pandemic, I decided to give this a go
 	- Level 1 Authentication - Email and Password
 		- Using Simple Database Schema
 		![](./results/pass_simple.png)
+	
 	- Level 2 Authentication - Database Encryption
 		- Using mongoose-encrypt
 		![](./results/pass_enc.png)
@@ -179,28 +188,3 @@ After months of procrastination during the pandemic, I decided to give this a go
 	Simple page where users can register or login and can view or add new secrets
 
 	![](./results/secrets.gif)
-
-Till Directory #6 everything works on the client side.
-Proceeding onwards, you'll need npm to install the dependencies and can run the server with node.
-
-In the respective directory run the command 
-
-`npm install` 
-
-or 
-
-`npm i`
-
-to install the dependencies. And then you can start the server with
-
-`node app.js`
-
-Most should be accessible with 
-
-`http://localhost:3000/` 
-
-in any modern browser, but do take a look at the server file to verify the port number (it should also be logged in the prompt, but I might've gotten lazy while writing some files)
-
-And for the demos that need a database, you should have `mongod` running on the default port
-
-`mongodb://localhost:27017/`
